@@ -17,7 +17,7 @@ router = APIRouter(prefix='/auth', tags=['auth'])
 templates = Jinja2Templates(directory='templates')
 
 ALGORITHM = 'HS256'
-SECRET_KEY = 'fastapi-insecure-9tw8u-qd)wh^&hltl(_u(l)s(%0r%_1by@tzc#evg437!oj%(-'
+SECRET_KEY = 'yoursecretkey'
 
 bcrypt_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
 
