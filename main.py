@@ -20,7 +20,7 @@ Base.metadata.create_all(bind=engine)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 ALGORITHM = 'HS256'
-SECRET_KEY = 'fastapi-insecure-9tw8u-qd)wh^&hltl(_u(l)s(%0r%_1by@tzc#evg437!oj%(-'
+SECRET_KEY = 'yoursecretkey'
 
 
 @app.middleware("http")
