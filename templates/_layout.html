@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+{% include 'components/head_details.html' %}
+
+<body>
+<header class="header-area header-in-container clearfix">
+
+    {% block header_top_above %} {% endblock %}
+    {% include 'components/header_bottom_navbar.html' %}
+
+</header>
+
+{% block content %}
+{% endblock %}
+
+{% include 'components/footer.html' %}
+
+<!-- All JS is here
+============================================ -->
+{% block js_script %} {% endblock %}
+<script src="{{ url_for('static', path='/assets/js/vendor/modernizr-3.11.7.min.js') }}"></script>
+<script src="{{ url_for('static', path='/assets/js/vendor/jquery-v3.6.0.min.js') }}"></script>
+<script src="{{ url_for('static', path='/assets/js/vendor/jquery-migrate-v3.3.2.min.js') }}"></script>
+<script src="{{ url_for('static', path='/assets/js/vendor/popper.min.js') }}"></script>
+<script src="{{ url_for('static', path='/assets/js/vendor/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', path='/assets/js/plugins.js') }}"></script>
+<script src="{{ url_for('static', path='/js/jquery-slim.js') }}"></script>
+
+<!-- Ajax Mail -->
+<script src="{{ url_for('static', path='/assets/js/ajax-mail.js') }}"></script>
+<!-- Main JS -->
+<script src="{{ url_for('static', path='/assets/js/main.js') }}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+
+
+
+<div class="col-lg-3">
+    <div class="sidebar-style">
+        <div class="sidebar-widget">
+            <h4 class="pro-sidebar-title">Search </h4>
+            <div class="pro-sidebar-search mb-55 mt-25">
+                <form class="pro-sidebar-search-form" action="#">
+                    <input type="text" placeholder="Search here...">
+                    <button>
+                        <i class="pe-7s-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="sidebar-widget">
+            <h4 class="pro-sidebar-title">Recent Posts </h4>
+            <div class="sidebar-project-wrap mt-30">
+                {% for recent_post in recent_posts %}
+                <div class="single-sidebar-blog">
+                    <div class="sidebar-blog-img">
+                        <a href=""/{{recent_post.id}}""><img src="/{{recent_post.image_url}}" height="60"alt=""></a>
+                    </div>
+                    <div class="sidebar-blog-content">
+                        <h4><a href="/{{recent_post.id}}">{{recent_post.title|truncate(20)}}</a></h4>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="sidebar-widget mt-35">
+            <h4 class="pro-sidebar-title">Categories </h4>
+            <div class="sidebar-widget-list mt-20">
+                <ul>
+                    <li>
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" value=""> <a href="#">Women <span>4</span> </a>
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" value=""> <a href="#">Men <span>4</span> </a>
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" value=""> <a href="#">Bags <span>4</span> </a>
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" value=""> <a href="#">Accessories <span>4</span> </a>
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-widget mt-50">
+            <h4 class="pro-sidebar-title">Tag </h4>
+            <div class="sidebar-widget-tag mt-25">
+                <ul>
+                    <li><a href="#">Clothing</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">For Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Fashion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

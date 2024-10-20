@@ -1,0 +1,100 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">About us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="welcome-area pt-100 pb-95">
+    <div class="container">
+        <div class="welcome-content text-center">
+            <h5>Who Am I </h5>
+            <h1>Welcome To Ventuno Blog</h1>
+            <p> This is Ventuno, as a passionate person in programming, being dedicated, organized, and committed to
+                continuous learning are some of my attitudes that I think is good to have for working in this area of
+                expertise. </p>
+        </div>
+    </div>
+</div>
+<div class="banner-area pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="single-banner mb-30">
+                    <a href="product-details.html"><img
+                            src="{{ url_for('static', path='/assets/img/project/ventuno-blogche.png') }}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="single-banner mb-30">
+                    <a href="product-details.html"><img
+                            src="{{ url_for('static', path='/assets/img/project/ventuno-django-shop.png') }}"
+                            alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="single-banner mb-30">
+                    <a href="product-details.html"><img
+                            src="{{ url_for('static', path='/assets/img/project/ventuno-django-blog.png') }}"
+                            alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about-mission-area pb-70">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4">
+                <div class="single-mission mb-30">
+                    <h3><a class="facebook" href="https://github.com/ventuno-21?tab=repositories"><i
+                            class="fa fa-github"></i> FastAPI - Blogche</a></h3>
+                    <p>Developed a blog application using FastAPI, Implemented user authentication and authorization
+                        features, access to Swagger, add new post and also users are able to add a comment</p>
+                    <p><strong>Technologies: </strong> Fastapi, Jinja2, Alembic, Pydantic, JavaScript, SQLite,
+                        SQLAlchemy </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="single-mission mb-30">
+                    <h3><a class="facebook" href="https://github.com/django-nauts/digistore"><i
+                            class="fa fa-github"></i> Django - Digistore</a></h3>
+                    <p>Created an e-commerce platform with product listings, shopping cart functionality with Session
+                        and context processors, and user reviews
+                        Integrated payment processing using Stripe API
+                        Use Celery beat to remove unpaid orders, and Dockerize the project</p>
+                    <p><strong>Technologies: </strong> Django, SQLite, Bootstrap, JavaScript, DRF (including Swagger)
+                        AJAX (Axios), Celery, Docker</p>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="single-mission mb-30">
+                    <h3><a class="facebook" href="https://github.com/django-nauts/tech_blog"><i
+                            class="fa fa-github"></i> Django - Blog</a></h3>
+                    <p>Developed a blog application using Django, allowing users to create, edit, and delete posts,
+                        Implemented user authentication and authorization features</p>
+                    <p><strong>Technologies: </strong>Django, SQLite, HTML, CSS, JavaScript, AJAX(Axios)</p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+<div class="header-bottom sticky-bar header-res-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-6 col-4">
+                <div class="logo">
+                    <a href="index.html">
+                        <img alt="" src="{{ url_for('static', path='/assets/img/logo/logo.png') }}">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                <div class="main-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a>
+                            </li>
+                            <li><a href="shop.html"> API <i class="fa fa-angle-down"></i> </a>
+                                <ul class="submenu">
+
+                                    <li><a href="/docs">Swagger</a></li>
+                                    <li><a href="/redocl">Redoc</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#"> Pages <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="/docs">Swagger</a></li>
+                                    <li><a href="/redoc">Redoc</a></li>
+                                    <li><a href="/post/create-post">Create post</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="/about-us/contact/"> About </a></li>
+                            <li><a href="/about-us/contact/"> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6 col-8">
+
+
+                <div class="header-right-wrap">
+
+                    {% if request.state.is_authenticated %}
+
+                    <div class="same-style account-satting">
+
+                        <a class="account-satting-active" href="#">
+                            {% if request.state.is_authenticated %}
+                            <h5 class="text-secondary"> Hi-{{request.state.username}}!<i class="fa fa-angle-down"></i>
+                            </h5>
+                            {% endif %}
+                        </a>
+                        <div class="account-dropdown">
+                            <ul>
+                                <li><a href="/auth/change-pass">change password </a></li>
+                                <li><a href="/auth/logout">logout</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    {% else %}
+                    <div class="same-style account-satting">
+
+                        <a class="account-satting-active" href="#"><h4 class="alert-dark"></h4><i
+                                class="pe-7s-user-female"></i></a>
+                        <div class="account-dropdown">
+                            <ul>
+
+                                <li><a href="/auth/login-page">Login</a></li>
+                                <li><a href="/auth/register-page">Register</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mobile-menu-area">
+            <div class="mobile-menu">
+                <nav id="mobile-menu-active">
+                    <ul class="menu-overflow">
+                        <li><a href="/">HOME</a>
+                        </li>
+                        <li><a href="#">Pages</a>
+                            <ul>
+                                <li><a href="/docs">Swagger</a></li>
+                                <li><a href="/redoc">Redoc</a></li>
+                                <li><a href="/post/create-post">Create post</a></li>
+                                <li><a href="/auth/change-pass">change password </a></li>
+                                <li><a href="/auth/logout">logout</a></li>
+                                <li><a href="/about-us/contact/">About us</a></li>
+                                <li><a href="contact.html">contact us </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">API</a>
+                            <ul>
+                                <li><a href="/docs">Swagger</a></li>
+                                <li><a href="/redoc">Redoc</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/about-us/contact/">About us</a></li>
+                        <li><a href="/about-us/contact/">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

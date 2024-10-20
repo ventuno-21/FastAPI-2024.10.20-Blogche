@@ -1,0 +1,127 @@
+{% extends '_layout.html' %}
+
+
+{% block content %}
+
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">blog</a>
+                </li>
+                <li class="active">create a new post</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="login-register-area pt-100 pb-100">
+    <div class="container">
+        <div class="container">
+            {% if msg %}
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> {{ msg }}
+            </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-lg-7 col-md-12 ms-auto me-auto">
+                    <div class="login-register-wrapper">
+                        <div class="login-register-tab-list nav">
+                            <a class="active" data-bs-toggle="tab" href="#lg1">
+                                <h4> Create a new post </h4>
+                            </a>
+                        </div>
+                        <div class="tab-content">
+                            <div id="lg1" class="tab-pane active">
+                                <div class="login-form-container">
+                                    <div class="login-register-form">
+
+
+                                        <form method="post" enctype="multipart/form-data">
+                                            <input type="text" name="title" placeholder="Title">
+                                            <textarea type="textarea" class="form-control" name="description"
+                                                      placeholder="Description"></textarea>
+                                            <br/>
+                                            <input type="file" name="file" onchange="previewFile()">
+                                            <img src="" id="postImage" height="200px"><br/>
+                                            <div class="button-box"><br/>
+                                                <button type="submit" id="form-btn"><span>Create</span></button>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+</br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+    {% block js_script %}
+
+    <script type="text/javascript">
+
+
+        function previewFile() {
+            const preview = document.getElementById('postImage');
+            const file = document.querySelector('input[type=file]').files[0];
+            const reader = new FileReader();
+            reader.addEventListener("load", function () {
+                preview.src = reader.result; //show image in <img tag>
+                base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+                console.log("file.name=")
+                console.log(file.name)
+
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        //
+        // let formBtn = document.getElementById("form-btn");
+        // formBtn.addEventListener("click", function (e) {
+        //     e.preventDefault()
+        //     console.log("inside ")
+        //     const file = document.querySelector('input[type=file]').files[0];
+        //     console.log("file.name=")
+        //     console.log(file.name)
+        //
+        //     const reader = new FileReader();
+        //     preview.src = reader.result;
+        //     base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+        //
+        //     console.log("file.name=")
+        //     console.log(file.name)
+        //
+        //     console.log("base64String=")
+        //     console.log(base64String)
+        //
+        //     var formData = new FormData();
+        //     formData.append("filename", file.name);
+        //     formData.append("filedata", base64String);
+        //     fetch('/create-post', {
+        //         method: 'POST',
+        //         body: formData,
+        //     })
+        //         .then(response => {
+        //             console.log(response);
+        //         })
+        //         .catch(error => {
+        //             console.error(error);
+        //         });
+        // })
+
+    </script>
+
+
+    {% endblock %}
+

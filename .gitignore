@@ -1,0 +1,16 @@
+bin/
+db.sqlite3
+blogche.sqlite3
+lib/
+manage.py
+pyvenv.cfg
+__init__.py
+__pycache__
+.idea
+.env
+venv
+*/migrations/
+
+
+
+

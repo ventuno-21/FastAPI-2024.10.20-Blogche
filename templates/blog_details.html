@@ -1,0 +1,129 @@
+{% extends '_layout.html' %}]
+
+
+{% block content %}
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">Blog Details</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="Blog-area pt-100 pb-100">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="blog-details-wrapper ml-20">
+                    <div class="blog-details-top">
+                        <div class="blog-details-img">
+                            <img alt="not-loaded" src="{{post.image_url}}">
+                        </div>
+                        <div class="blog-details-content">
+                            <div class="blog-meta-2">
+                                <ul>
+                                    <li>{{post.timestamp}}</li>
+                                    <li><a href="#">{% if post.comments %}{{ post.comments|count }}{% else %}0 {% endif
+                                        %} <i class="fa fa-comments-o"></i></a></li>
+                                </ul>
+                            </div>
+                            <h3>{{post.title}}</h3>
+                            <p>
+                                {{post.description}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tag-share">
+                        <div class="dec-tag">
+                            <ul>
+                                <li><a href="#">lifestyle ,</a></li>
+                                <li><a href="#">interior ,</a></li>
+                                <li><a href="#">outdoor</a></li>
+                            </ul>
+                        </div>
+                        <div class="blog-share">
+                            <span>share :</span>
+                            <div class="share-social">
+                                <ul>
+                                    <li>
+                                        <a class="facebook" href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter" href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="instagram" href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-previous-post">
+                        <a href="#"> <i class="fa fa-angle-left"></i> prev post</a>
+                        <a href="#">next post <i class="fa fa-angle-right"></i></a>
+                    </div>
+                    {% if post.comments %}
+                    <div class="blog-comment-wrapper mt-55">
+                        {% if post.comments|count == 1 %}
+                        <h4 class="blog-dec-title">comment : 1</h4>
+                        {% else %}
+                        <h4 class="blog-dec-title">comments : {{ post.comments|count }}</h4>
+                        {% endif %}
+                        <div class="single-comment-wrapper mt-35">
+                            <div class="blog-comment-img">
+                                <img src="assets/img/blog/comment-1.jpg" alt="">
+                            </div>
+                            <div class="blog-comment-content">
+                                {% for comment in post.comments %}
+
+                                <h4>{{comment.user.username}}</h4>
+                                <span>{{ comment.timestamp.strftime('%Y-%m-%d') }} </span>
+                                <p> {{ comment.text }} </p>
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <br>
+                    <h4> If you understand above article feel free to leave a comment ... </h4>
+                    {% endif %}
+                    <div class="blog-reply-wrapper mt-50">
+                        <h4 class="blog-dec-title">post a comment</h4>
+                        {% if request.state.is_authenticated %}
+                        <br>
+
+                                        <form method="post">
+                                            <textarea name="comment" placeholder="Message"></textarea>
+
+                                            <div class="button-box">
+                                                <button type="submit"><span>SEND MESSAGE</span></button>
+                                            </div>
+                                        </form>
+                        {% else %}
+                                <br>
+                                <p> you should <b><a href="/auth/login-page"> LOGIN </a></b>first</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sidebar area-->
+                    {% include 'components/sidebar.html' %}
+
+
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}
